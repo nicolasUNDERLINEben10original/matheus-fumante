@@ -1,0 +1,45 @@
+/* Configuração básica do fundo */
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a1a; /* Cinza bem escuro */
+    overflow: hidden;
+    font-family: 'Arial Black', sans-serif;
+}
+
+/* Estilização do texto */
+.smoky {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.smoky span {
+    display: block;
+    color: #fff;
+    font-size: 8rem;
+    letter-spacing: 10px;
+    
+    /* Aumentado de 0.8s para 3s para uma animação muito mais lenta */
+    /* O 'ease-in-out' torna o início e o fim do movimento mais suaves */
+    transition: 3s ease-in-out; 
+}
+
+/* Efeito de Fumaça ao passar o mouse (Hover) */
+.smoky:hover span {
+    filter: blur(40px); /* Aumentei o desfoque para combinar com a lentidão */
+    opacity: 0;
+    transform: translateY(-150px) rotate(45deg) scale(2);
+}
+
+/* Delay progressivo: define quando cada letra começa a se mover */
+/* Ajustei os valores para 0.2s de intervalo para manter a elegância */
+.smoky span:nth-child(1) { transition-delay: 0s; }
+.smoky span:nth-child(2) { transition-delay: 0.2s; }
+.smoky span:nth-child(3) { transition-delay: 0.4s; }
+.smoky span:nth-child(4) { transition-delay: 0.6s; }
+.smoky span:nth-child(5) { transition-delay: 0.8s; }
